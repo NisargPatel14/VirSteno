@@ -38,7 +38,7 @@ export default function Home() {
         </div>
       </article>
       <article
-        className="px-8 py-12 bg-black bg-opacity-5 md:px-20 md:py-16"
+        className="px-8 py-12 bg-black bg-opacity-5 md:px-20 md:py-19"
         id="features"
       >
         <h2 className="text-3xl font-semibold">What's under the hood?</h2>
