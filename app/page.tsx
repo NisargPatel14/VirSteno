@@ -25,15 +25,6 @@ export default function Home() {
                 <RightArrow />
               </div>
             </Link>
-            <a
-              className="flex gap-2 px-4 py-2 font-semibold text-gray-600 transition duration-100 rounded-lg hover:text-gray-800"
-              href="#features"
-            >
-              Learn more
-              <div className="m-auto">
-                <DownArrow />
-              </div>
-            </a>
           </div>
         </div>
       </article>
@@ -52,7 +43,7 @@ export default function Home() {
             </p>
             <div className="grow"></div>
             <a
-              href="https://clerk.com/docs/component-reference/overview?utm_source=vercel-template&utm_medium=template_repos&utm_campaign=nextjs_template"
+              href=""
               className="text-gray-500 cta hover:underline cursor-not-allowed pointer-events-none"
               target="_blank"
             >
