@@ -1,6 +1,4 @@
-import Image from "next/image";
 import Link from "next/link";
-import componentsImg from "./assets/components.svg";
 import { DownArrow, RightArrow } from "./icons";
 import "./home.css";
 
@@ -8,7 +6,7 @@ export default function Home() {
   return (
     <main className="">
       <article className="grid lg:grid-cols-2">
-        <div className="px-8 py-20 md:px-20 lg:py-48">
+        <div className="px-8 py-20 md:px-20 lg:py-16">
           <h1 className="text-5xl font-semibold text-transparent md:text-6xl gradient">
             Auth starts here.
           </h1>
@@ -19,7 +17,7 @@ export default function Home() {
           </p>
           <div className="flex gap-2 mt-8">
             <Link
-              href="/dashboard"
+              href="/profile"
               className="flex content-center gap-2 px-4 py-2 font-semibold text-white transition-colors duration-200 rounded-lg bg-primary-600 hover:bg-primary-700"
             >
               Login
@@ -40,7 +38,7 @@ export default function Home() {
         </div>
       </article>
       <article
-        className="px-8 py-12 bg-black bg-opacity-5 md:px-20 md:py-24"
+        className="px-8 py-12 bg-black bg-opacity-5 md:px-20 md:py-16"
         id="features"
       >
         <h2 className="text-3xl font-semibold">What's under the hood?</h2>

@@ -46,32 +46,32 @@ export default function RootLayout({
         }}
       >
         <body className={`${inter.className} min-h-screen flex flex-col`}>
-          <header className="flex items-center h-20 gap-4 px-4 border-b border-black border-solid sm:px-8 border-opacity-20">
+          <header className="flex items-center h-20 gap-4 px-4 border-b border-solid sm:px-8 border-opacity-20">
             <Link href="/" className="flex items-center h-20 gap-2 sm:gap-4">
               <Image
                 src="/clerk.svg"
                 alt="Clerk Logo"
-                width={102}
-                height={32}
+                width={200}
+                height={90}
                 priority
               />
-              <Times />
+              {/* <Times />
               <Image
                 src="/next.svg"
                 alt="Next.js Logo"
                 width={90}
                 height={18}
                 priority
-              />
+              /> */}
             </Link>
             <div className="grow" />
             <SignedIn>
               <div className="hidden sm:block">
-                <OrganizationSwitcher afterCreateOrganizationUrl="/dashboard" />
+                <OrganizationSwitcher afterCreateOrganizationUrl="/profile" />
               </div>
               <div className="block sm:hidden">
                 <OrganizationSwitcher
-                  afterCreateOrganizationUrl="/dashboard"
+                  afterCreateOrganizationUrl="/profile"
                   appearance={{
                     elements: {
                       organizationSwitcherTriggerIcon: `hidden`,
@@ -89,15 +89,15 @@ export default function RootLayout({
             <Image
               src="/clerk.svg"
               alt="Clerk Logo"
-              width={64}
-              height={32}
+              width={120}
+              height={60}
               priority
             />
             <span className="text-sm">© 2023</span>
             <nav className="flex justify-end grow sm:gap-2">
               <a
                 className="flex gap-2 px-3 py-2 text-sm font-semibold text-gray-600 transition duration-100 rounded-md hover:text-gray-800"
-                href="https://github.com/NisargPatel14"
+                href="https://github.com/NisargPatel14/VirSteno"
               >
                 <div className="m-auto">
                   <Github />
