@@ -6,8 +6,8 @@ export default function Home() {
   return (
     <main className="">
       <article className="grid lg:grid-cols-2">
-        <div className="px-8 py-20 md:px-20 lg:py-16">
-          <h1 className="text-5xl font-semibold text-transparent md:text-6xl gradient">
+        <div className="px-8 py-20 md:px-20 lg:py-20">
+          <h1 className="text-5xl font-semibold text-transparent md:text-6xl gradient ">
             Auth starts here.
           </h1>
           <p className="mt-2 text-lg">
@@ -29,7 +29,7 @@ export default function Home() {
         </div>
       </article>
       <article
-        className="px-8 py-12 bg-black bg-opacity-5 md:px-20 md:py-19"
+        className="px-8 py-20 bg-black bg-opacity-5 md:px-20 md:py-19"
         id="features"
       >
         <h2 className="text-3xl font-semibold">What's under the hood?</h2>
