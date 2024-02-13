@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { DownArrow, RightArrow } from "./icons";
 import "./home.css";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -28,6 +29,12 @@ export default function Home() {
           </div>
         </div>
       </article>
+
+      {/* image for main landing page  */}
+      <div className="flex flex-col justify-center">
+        <Image src={"app/assets/mainPagePic.svg"} alt = "Main page"/>
+      </div>
+      
       <article
         className="px-8 py-20 bg-black bg-opacity-5 md:px-20 md:py-19"
         id="features"
@@ -68,6 +75,7 @@ export default function Home() {
           </div>
         </div>
       </article>
+      
     </main>
   );
 }
