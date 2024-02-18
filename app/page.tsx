@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { RightArrow } from "./icons";
 import "./home.css";
-import Image from "next/image";
 import { MainPagePic } from "./components/SVGS/MainPagePic";
 
 export default function Home() {
