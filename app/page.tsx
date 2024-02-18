@@ -1,13 +1,14 @@
 import Link from "next/link";
-import { DownArrow, RightArrow } from "./icons";
+import { RightArrow } from "./icons";
 import "./home.css";
 import Image from "next/image";
+import { MainPagePic } from "./components/SVGS/MainPagePic";
 
 export default function Home() {
   return (
     <main className="">
-      <article className="grid lg:grid-cols-2">
-        <div className="px-8 py-20 md:px-20 lg:py-20">
+      <article className="grid lg:grid-cols-2 py-5">
+        <div className="px-8 py-20 md:px-20 lg:py-20 flex flex-col justify-center sm:items-center md:items-center lg:items-center xl:items-start">
           <h1 className="text-5xl font-semibold text-transparent md:text-6xl gradient ">
             Auth starts here.
           </h1>
@@ -28,13 +29,13 @@ export default function Home() {
             </Link>
           </div>
         </div>
+        <div className="flex flex-col justify-center sm:items-center md:items-center lg:items-center xl:items-start">
+          <MainPagePic className="responsive-svg sm:w-2/5 md:w-1/2 lg:w-3/5 xl:w-3/4" />
+        </div>
       </article>
 
       {/* image for main landing page  */}
-      <div className="flex flex-col justify-center">
-        <Image src={"app/assets/mainPagePic.svg"} alt = "Main page"/>
-      </div>
-      
+
       <article
         className="px-8 py-20 bg-black bg-opacity-5 md:px-20 md:py-19"
         id="features"
@@ -75,7 +76,6 @@ export default function Home() {
           </div>
         </div>
       </article>
-      
     </main>
   );
 }
