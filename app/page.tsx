@@ -49,13 +49,13 @@ export default function Home() {
               conversations with high accuracy.
             </p>
             <div className="grow"></div>
-            <a
-              href=""
-              className="text-gray-500 cta hover:underline cursor-not-allowed pointer-events-none"
+            <Link
+              href="/demo"
+              className="text-[#6C47FF] cta hover:underline"
               target="_blank"
             >
               View Demo <span className="arrow">-&gt;</span>
-            </a>
+            </Link>
           </div>
           <div className="flex flex-col h-56 gap-1 p-8 bg-white shadow-lg rounded-2xl">
             <h3 className="text-lg font-medium">99% Accuracy</h3>

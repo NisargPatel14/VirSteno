@@ -55,14 +55,14 @@ export default function RootLayout({
                 height={90}
                 priority
               />
-              {/* <Times />
+              <Times />
               <Image
                 src="/next.svg"
                 alt="Next.js Logo"
                 width={90}
                 height={18}
                 priority
-              /> */}
+              />
             </Link>
             <div className="grow" />
             <SignedIn>
