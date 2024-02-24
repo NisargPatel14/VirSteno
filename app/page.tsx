@@ -1,9 +1,25 @@
+"use client";
 import Link from "next/link";
 import { RightArrow } from "./icons";
 import "./home.css";
 import { MainPagePic } from "./components/SVGS/MainPagePic";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [hasSession, setHasSession] = useState(false);
+
+  useEffect(() => {
+    const checkSession = () => {
+      const cookies = document.cookie;
+      if (cookies.includes("__session")) {
+        setHasSession(true);
+      } else {
+        setHasSession(false);
+      }
+    };
+
+    checkSession();
+  }, []);
   return (
     <main className="">
       <article className="grid lg:grid-cols-2 py-5">
@@ -21,7 +37,8 @@ export default function Home() {
               href="/profile"
               className="flex content-center gap-2 px-4 py-2 font-semibold text-white transition-colors duration-200 rounded-lg bg-primary-600 hover:bg-primary-700"
             >
-              Login
+              {hasSession ? <p>Go to Profile</p> : <p>Login</p>}
+
               <div className="m-auto">
                 <RightArrow />
               </div>
@@ -32,8 +49,6 @@ export default function Home() {
           <MainPagePic className="responsive-svg sm:w-2/5 md:w-1/2 lg:w-3/5 xl:w-3/4" />
         </div>
       </article>
-
-      {/* image for main landing page  */}
 
       <article
         className="px-8 py-20 bg-black bg-opacity-5 md:px-20 md:py-19"
