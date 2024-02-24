@@ -4,9 +4,11 @@ import { RightArrow } from "./icons";
 import "./home.css";
 import { MainPagePic } from "./components/SVGS/MainPagePic";
 import { useEffect, useState } from "react";
+import { useUser } from "@clerk/nextjs";
 
 export default function Home() {
   const [hasSession, setHasSession] = useState(false);
+  const { isLoaded, user } = useUser();
 
   useEffect(() => {
     const checkSession = () => {
@@ -17,7 +19,6 @@ export default function Home() {
         setHasSession(false);
       }
     };
-
     checkSession();
   }, []);
   return (
@@ -25,7 +26,11 @@ export default function Home() {
       <article className="grid lg:grid-cols-2 py-5">
         <div className="px-8 py-20 md:px-20 lg:py-20 flex flex-col justify-center sm:items-center md:items-center lg:items-center xl:items-start">
           <h1 className="text-5xl font-semibold text-transparent md:text-6xl gradient ">
-            Auth starts here.
+            {isLoaded && user ? (
+              <p>Welcome Back {user.firstName}!</p>
+            ) : (
+              <p>Auth starts here.</p>
+            )}
           </h1>
           <p className="mt-2 text-lg">
             A real-time meeting assistant for Google Meet and Microsoft Teams,
