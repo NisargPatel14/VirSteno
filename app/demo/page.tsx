@@ -5,7 +5,7 @@ const Page = () => {
     <main
       className="flex flex-col justify-center items-center md:my-32 lg:my-32 xl:my-32" 
     >
-      <div className="card-div flex xxs:flex-col xs:flex-col sm:flex-col md:flex-col lg:flex-col xl:flex-row justify-center items-center w-3/4 -z-30">
+      <div className="card-div flex xxs:flex-col xs:flex-col sm:flex-col md:flex-col lg:flex-col xl:flex-row justify-center items-center w-3/4 ">
         <div className="card-1 m-4 p-8 border-2 bg-white shadow-lg rounded-2xl xs:text-[15px] xxs:text-[15px]">
           <h2 className="font-bold mb-4">
             Video Transcription and Summarization
