@@ -46,7 +46,7 @@ export default function RootLayout({
         }}
       >
         <body className={`${inter.className} min-h-screen flex flex-col`}>
-          <header className="flex items-center h-20 gap-4 px-4 border-b border-solid sm:px-8 border-opacity-20">
+          <header className="flex items-center h-20 gap-4 px-4 border-b border-solid sm:px-8 border-opacity-20 bg-white">
             <Link href="/" className="flex items-center h-20 gap-2 sm:gap-4">
               <Image
                 src="/logo.svg"
@@ -85,7 +85,7 @@ export default function RootLayout({
             </SignedIn>
           </header>
           <main className="grow">{children}</main>
-          <footer className="flex items-center h-20 gap-1 px-8 font-medium border-t md:px-20">
+          <footer className="flex items-center h-20 gap-1 px-8 font-medium border-t md:px-20 bg-white">
             <Image
               src="/logo.svg"
               alt="Clerk Logo"
