@@ -72,7 +72,7 @@ export default function Home() {
             <Link
               href="/demo"
               className="text-[#6C47FF] cta hover:underline"
-              target="_blank"
+              target="_self"
             >
               View Demo <span className="arrow">-&gt;</span>
             </Link>
@@ -84,6 +84,13 @@ export default function Home() {
               background noise and other disturbances.
             </p>
             <div className="grow"></div>
+            <Link
+              href="/text-services"
+              className="text-[#6C47FF] cta hover:underline"
+              target="_self"
+            >
+              Try it Yourself <span className="arrow">-&gt;</span>
+            </Link>
           </div>
           <div className="flex flex-col h-56 gap-1 p-8 bg-white shadow-lg rounded-2xl">
             <h3 className="text-lg font-medium">99% Uptime</h3>
