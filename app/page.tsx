@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { useUser } from "@clerk/nextjs";
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false);
   const [hasSession, setHasSession] = useState(false);
   const { isLoaded, user } = useUser();
 
@@ -20,7 +21,9 @@ export default function Home() {
       }
     };
     checkSession();
+    setMounted(true);
   }, []);
+  if(!mounted) return <div>Loading....</div>;
   return (
     <main className="">
       <article className="grid lg:grid-cols-2 py-5">
