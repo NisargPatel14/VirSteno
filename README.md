@@ -34,7 +34,7 @@ Our project's chatbot feature facilitates text-based conversations by understand
 * NextJS 13.5 (for Web app)
 * OAuth ( Google ,Clerk etc. ) (Secure Auth)
 
-# Screecshot
+# Screenshot
 ![virsteno](https://github.com/AnshPatel-softdev/VirSteno/assets/125112525/827c87b4-8d80-42bc-854d-a428d764410c)
 
 
