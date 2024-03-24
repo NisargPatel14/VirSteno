@@ -19,6 +19,7 @@ const Page = () => {
             "Content-Type": "application/json",
             audio_url:
               "https://cdn.discordapp.com/attachments/929587596470910994/1214630425742540891/spongebob.mp3?ex=660c44bc&is=65f9cfbc&hm=01f06fda142aa3d6fddd3908a101748614054c87d3df2cd97ce668b6b22e3caa&",
+              "assembly-ai-api-key":"07b10cbba5684870bb4b628a97d110ea",
           },
         }
       );
