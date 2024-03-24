@@ -12,7 +12,7 @@ const Page = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        "https://vir-server.virsteno.workers.dev/transcribe",
+        "https://vs.virsteno.workers.dev/transcribe",
         {
           method: "POST",
           headers: {
@@ -28,8 +28,8 @@ const Page = () => {
       }
 
       const data = await response.json();
-      console.log(data.transcript.text);
-
+      //console.log(data.transcript.text);
+      
       setTranscriptionStarted(true);
 
       setTranscription("");
