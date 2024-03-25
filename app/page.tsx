@@ -36,9 +36,7 @@ export default function Home() {
             )}
           </h1>
           <p className="mt-2 text-lg">
-            A real-time meeting assistant for Google Meet and Microsoft Teams,
-            transcribing conversations and organizing chats for enhanced
-            productivity.
+          Streamline Communication with Ease: Your All-in-One Solution for Summarization, Transcription, and Chatbot Services.
           </p>
           <div className="flex gap-2 mt-8">
             <Link
@@ -66,10 +64,10 @@ export default function Home() {
 
         <div className="grid gap-8 mt-8 lg:grid-cols-3">
           <div className="flex flex-col h-56 gap-1 p-8 bg-white shadow-lg rounded-2xl">
-            <h3 className="text-lg font-medium">Powerful AI Model</h3>
+            <h3 className="text-lg font-medium">Powerful API</h3>
             <p className="text-gray-700">
-              Our AI model is trained to transcribe audio and video
-              conversations with high accuracy.
+              Our API uses an AI model is trained to transcribe, summmarize audio and video
+              conversations with high accuracy. It also fliters out background noise and other disturbances.
             </p>
             <div className="grow"></div>
             <Link
@@ -81,10 +79,9 @@ export default function Home() {
             </Link>
           </div>
           <div className="flex flex-col h-56 gap-1 p-8 bg-white shadow-lg rounded-2xl">
-            <h3 className="text-lg font-medium">99% Accuracy</h3>
+            <h3 className="text-lg font-medium">Accurate Chatbot</h3>
             <p className="text-gray-700">
-              We created our model to be highly accurate, that fliter out
-              background noise and other disturbances.
+              We created our chatbot to be highly accurate, specifically tailored to your needs.
             </p>
             <div className="grow"></div>
             <Link
