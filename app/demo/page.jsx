@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useRef } from "react";
 
 const Page = () => {
@@ -23,7 +23,7 @@ const Page = () => {
           headers: {
             "Content-Type": "application/json",
             audio_url:
-              "https://cdn.discordapp.com/attachments/929587596470910994/1214630425742540891/spongebob.mp3?ex=660c44bc&is=65f9cfbc&hm=01f06fda142aa3d6fddd3908a101748614054c87d3df2cd97ce668b6b22e3caa&",
+              "https://cdn.discordapp.com/attachments/929587596470910994/1214630425742540891/spongebob.mp3?ex=661eb9bc&is=660c44bc&hm=c43d122cbed64a3187f4697f69c4f5e555db702168b84b2c5582357899ab51e4&",
             "assembly-ai-api-key": "07b10cbba5684870bb4b628a97d110ea",
           },
         }
@@ -65,7 +65,7 @@ const Page = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "ai-api-key": "pk-dOCDUUjlpCnDkEjkgTJowrPRVgxKHMiZuuARCaXZSPeFZlKK",
+          "ai-api-key": "pk-WykaitMBNmINXSZmwiaTZfGZZHZQfWxlPOfwcPuUcNZVtShO",
         },
         body: JSON.stringify({
           messages: [
