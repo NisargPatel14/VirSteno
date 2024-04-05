@@ -23,8 +23,9 @@ const Page = () => {
           headers: {
             "Content-Type": "application/json",
             audio_url:
-              "https://cdn.discordapp.com/attachments/929587596470910994/1214630425742540891/spongebob.mp3?ex=661eb9bc&is=660c44bc&hm=c43d122cbed64a3187f4697f69c4f5e555db702168b84b2c5582357899ab51e4&",
+            "https://raw.githubusercontent.com/NisargPatel14/VirSteno/main/public/SpongeBob.mp4",
             "assembly-ai-api-key": "07b10cbba5684870bb4b628a97d110ea",
+            //"speakers_labels":"true",
           },
         }
       );
