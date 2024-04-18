@@ -23,7 +23,7 @@ export default function Home() {
     checkSession();
     setMounted(true);
   }, []);
-  if(!mounted) return <div>Loading....</div>;
+  if (!mounted) return <div>Loading....</div>;
   return (
     <main className="">
       <article className="grid lg:grid-cols-2 py-5">
@@ -36,15 +36,25 @@ export default function Home() {
             )}
           </h1>
           <p className="mt-2 text-lg">
-          Streamline Communication with Ease: Your All-in-One Solution for Summarization, Transcription, and Chatbot Services.
+            Streamline Communication with Ease: Your All-in-One Solution for
+            Summarization, Transcription, and Chatbot Services.
           </p>
-          <div className="flex gap-2 mt-8">
+          <div className="flex gap-4 mt-8">
             <Link
               href="/profile"
               className="flex content-center gap-2 px-4 py-2 font-semibold text-white transition-colors duration-200 rounded-lg bg-primary-600 hover:bg-primary-700"
             >
               {hasSession ? <p>Go to Profile</p> : <p>Login</p>}
 
+              <div className="m-auto">
+                <RightArrow />
+              </div>
+            </Link>
+            <Link
+              href="/video-services"
+              className="flex content-center gap-2 px-4 py-2 font-semibold text-white transition-colors duration-200 rounded-lg bg-primary-600 hover:bg-primary-700"
+            >
+              Start transcribing
               <div className="m-auto">
                 <RightArrow />
               </div>
@@ -63,11 +73,12 @@ export default function Home() {
         <h2 className="text-3xl font-semibold">What's under the hood?</h2>
 
         <div className="grid gap-8 mt-8 lg:grid-cols-3">
-          <div className="flex flex-col h-56 gap-1 p-8 bg-white shadow-lg rounded-2xl">
+          <div className="flex flex-col h-auto gap-1 p-8 bg-white shadow-lg rounded-2xl">
             <h3 className="text-lg font-medium">Powerful API</h3>
             <p className="text-gray-700">
-              Our API uses an AI model is trained to transcribe, summmarize audio and video
-              conversations with high accuracy. It also fliters out background noise and other disturbances.
+              Our API uses an AI model is trained to transcribe, summmarize
+              audio and video conversations with high accuracy. It also fliters
+              out background noise and other disturbances.
             </p>
             <div className="grow"></div>
             <Link
@@ -78,10 +89,11 @@ export default function Home() {
               View Demo <span className="arrow">-&gt;</span>
             </Link>
           </div>
-          <div className="flex flex-col h-56 gap-1 p-8 bg-white shadow-lg rounded-2xl">
+          <div className="flex flex-col h-auto gap-1 p-8 bg-white shadow-lg rounded-2xl">
             <h3 className="text-lg font-medium">Accurate Chatbot</h3>
             <p className="text-gray-700">
-              We created our chatbot to be highly accurate, specifically tailored to your needs.
+              We created our chatbot to be highly accurate, specifically
+              tailored to your needs.
             </p>
             <div className="grow"></div>
             <Link
@@ -92,7 +104,7 @@ export default function Home() {
               Try it Yourself <span className="arrow">-&gt;</span>
             </Link>
           </div>
-          <div className="flex flex-col h-56 gap-1 p-8 bg-white shadow-lg rounded-2xl">
+          <div className="flex flex-col h-auto gap-1 p-8 bg-white shadow-lg rounded-2xl">
             <h3 className="text-lg font-medium">99% Uptime</h3>
             <p className="text-gray-700">
               Our services are always up and running, so you can rely on us for
