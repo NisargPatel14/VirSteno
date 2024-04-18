@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
 import { CldUploadWidget, CldVideoPlayer } from "next-cloudinary";
+import "next-cloudinary/dist/cld-video-player.css";
 
 const Page = () => {
   const [transcription, setTranscription] = useState("");
@@ -35,6 +36,12 @@ const Page = () => {
       setTranscriptionStarted(true);
       setTranscription("");
 
+      // Start playing the video
+      if (videoRef.current) {
+        videoRef.current.play();
+      }
+
+      // Process transcription data
       data.transcript.words.forEach((word) => {
         setTimeout(() => {
           setTranscription(
@@ -42,10 +49,6 @@ const Page = () => {
           );
         }, word.start);
       });
-
-      if (videoRef.current) {
-        videoRef.current.play();
-      }
     } catch (error) {
       setError(error.message);
     } finally {
@@ -89,12 +92,17 @@ const Page = () => {
         {/* Display video only when transcription is fetched */}
         {transcriptionStarted && uploadedVideo && (
           <CldVideoPlayer
+            className=" aspect-video rounded-lg"
+            width={1920}
+            height={1080}
             publicId={uploadedVideo}
-            controls="over"
-            preload="none"
-            className="w-full aspect-video rounded-xl"
-            width={1080}
-            height={607}
+            autoPlay={true}
+            colors={{
+              accent: "#6C47FF",
+              base: "#000000",
+              text: "#ffffff",
+            }}
+            controls={true}
           />
         )}
       </div>
@@ -103,27 +111,31 @@ const Page = () => {
         {loadingTranscription ? (
           <p>Loading Transcription...</p>
         ) : (
-          <CldUploadWidget
-            signatureEndpoint="/api/sign-cloudinary-params"
-            onSuccess={handleUploadSuccess}
-          >
-            {({ open }) => (
-              <button
-                onClick={handleUploadWidgetOpen}
-                className="bg-primary-600 hover:bg-primary-700 text-white font-bold py-2 px-4 rounded mr-5"
-                disabled={loadingTranscription}
+          <>
+            {!uploadedVideo && (
+              <CldUploadWidget
+                signatureEndpoint="/api/sign-cloudinary-params"
+                onSuccess={handleUploadSuccess}
               >
-                Upload a Video
-              </button>
+                {({ open }) => (
+                  <button
+                    onClick={handleUploadWidgetOpen}
+                    className="bg-primary-600 hover:bg-primary-700 text-white font-bold py-2 px-4 rounded mr-5"
+                    disabled={loadingTranscription}
+                  >
+                    Upload a Video
+                  </button>
+                )}
+              </CldUploadWidget>
             )}
-          </CldUploadWidget>
+            {transcriptionStarted && (
+              <div className="w-full border-2 rounded-lg p-3 mb-4 mt-4">
+                {transcription}
+              </div>
+            )}
+            {error && <p className="text-red-500">{error}</p>}
+          </>
         )}
-        {transcriptionStarted && (
-          <div className="w-full border-2 rounded-lg p-3 mb-4 mt-4">
-            {transcription}
-          </div>
-        )}
-        {error && <p className="text-red-500">{error}</p>}
       </div>
     </main>
   );
