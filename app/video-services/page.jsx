@@ -80,7 +80,6 @@ const Page = () => {
           handleUploadSuccess(result);
         } else {
           console.error("Upload error:", error);
-          // Handle upload error
         }
       }
     );
