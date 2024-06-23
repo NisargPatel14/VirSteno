@@ -1,38 +1,32 @@
 
-# VirSteno : One Stop Solution
+# VirSteno : Virtual Stenographer
 
-# OverView
+# Overview
 
-This repository offers transcription, text summarization, image generation, and a chatbot. Transcription accurately converts speech to text, while summarization condenses lengthy text into concise summaries. Image generation uses GANs to produce synthetic images, and the chatbot engages in text-based conversations using NLP models. Together, these features provide tools for audio-to-text conversion, summarization, image synthesis, and interactive dialogue, applicable across various domains.
+This repository offers transcription, text summarization, chatbot services. Transcription accurately converts speech to text, while summarization condenses lengthy text into concise summaries. Chatbot provides experience like ChatGPT.
 
 # Key Features
 
-**1.Transcription**
+## 1. Transcription
 
-Our project utilizes advanced speech recognition techniques to convert spoken language into written text accurately and efficiently, facilitating seamless documentation and analysis of verbal communication across diverse domains. 
+Our project utilizes AssemblyAI's advanced speech recognition techniques to convert spoken language into written text accurately and efficiently, facilitating seamless documentation and analysis of verbal communication across diverse domains. 
 
-**2.Summarization**
+## 2. Summarization
 
-Our project integrates a summarization feature, By extracting key points and main ideas, this module facilitates efficient comprehension and review of large volumes of text, enhancing productivity and decision-making across diverse domains and applications.
+Our project integrates OpenAI's API for summarization feature, By extracting key points and main ideas, this module facilitates efficient comprehension and review of large volumes of text, enhancing productivity and decision-making across diverse domains and applications.
 
-**3.Image Generation**
+## 3. Chatbot
 
-Image generation in our project creates synthetic images with realistic appearances, allowing for data augmentation, content creation, and various visual applications. This feature empowers users to produce custom images tailored to specific requirements and use cases, enhancing flexibility and creativity in visual content generation.
-
-**4.Chatbot**
-
-Our project's chatbot feature facilitates text-based conversations by understanding user queries and providing relevant responses.Integrated seamlessly, the chatbot enhances user interaction and support across various domains, offering intuitive communication and enriching the overall user experience.
-
-**5.Feature**
-
-**6.Feature**
-
-**7.Feature**
+Our project's chatbot feature facilitates text-based conversations by understanding user queries and providing relevant responses. Integrated seamlessly, the chatbot enhances user interaction and support across various domains, offering intuitive communication and enriching the overall user experience.
 
 # Technology Stack
 
-* NextJS 13.5 (for Web app)
-* OAuth ( Google ,Clerk etc. ) (Secure Auth)
+* NextJS 13.5
+* Clerk
+* Tailwind CSS
+* Cloudinary
+* AssemblyAI
+* Wrangler
 
 # Screenshot
 ![virsteno](https://github.com/AnshPatel-softdev/VirSteno/assets/125112525/827c87b4-8d80-42bc-854d-a428d764410c)
