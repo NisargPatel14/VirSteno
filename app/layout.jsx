@@ -20,18 +20,14 @@ const DevelopmentNotice = dynamic(
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Virtual Stenographer",
   description:
     " A real-time meeting assistant for Google Meet and Microsoft Teams, transcribing conversations and organizing chats for enhanced productivity.",
   openGraph: { images: ["/og.png"] },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <ClerkProvider
