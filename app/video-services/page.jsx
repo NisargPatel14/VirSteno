@@ -17,13 +17,13 @@ const Page = () => {
 
     try {
       const response = await fetch(
-        "https://vs.virsteno.workers.dev/transcribe",
+        `${process.env.NEXT_PUBLIC_API_URL}/transcribe`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            audio_url: audioUrl,
-            "assembly-ai-api-key": "07b10cbba5684870bb4b628a97d110ea",
+            "audio-url": audioUrl,
+            "assembly-ai-api-key": process.env.ASSEMBLYAI_API_KEY,
           },
         }
       );
@@ -42,13 +42,17 @@ const Page = () => {
       }
 
       // Process transcription data
-      data.transcript.words.forEach((word) => {
-        setTimeout(() => {
-          setTranscription(
-            (prevTranscription) => prevTranscription + " " + word.text
-          );
-        }, word.start);
-      });
+      if (data.transcript && Array.isArray(data.transcript.words)) {
+        data.transcript.words.forEach((word) => {
+          setTimeout(() => {
+            setTranscription(
+              (prevTranscription) => prevTranscription + " " + word.text
+            );
+          }, word.start);
+        });
+      } else {
+        throw new Error("Invalid transcription data format");
+      }
     } catch (error) {
       setError(error.message);
     } finally {
@@ -57,41 +61,17 @@ const Page = () => {
   };
 
   const handleUploadSuccess = (result) => {
-    const audioUrl = `https://res.cloudinary.com/virsteno/video/upload/${result.info.public_id}.mp3`;
+    const audioUrl = `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/video/upload/${result.info.public_id}.mp3`;
     handleFetchTranscription(audioUrl);
     setUploadedVideo(result.info.public_id);
-  };
-
-  const handleUploadWidgetOpen = () => {
-    // Open Cloudinary Upload Widget
-    cloudinary.openUploadWidget(
-      {
-        cloudName: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
-        uploadPreset: process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET,
-        sources: ["local", "url", "camera"],
-        clientAllowedFormats: ["mp4", "avi", "mov"], // Allowed video formats
-        maxFileSize: 500000000, // Maximum file size in bytes (e.g., 500 MB)
-        multiple: false, // Allow multiple file uploads
-        resourceType: "video", // Specify resource type as 'video'
-        uploadSignatureTimestamp: Date.now() / 1000, // Timestamp for secure upload
-      },
-      (error, result) => {
-        if (!error && result && result.event === "success") {
-          handleUploadSuccess(result);
-        } else {
-          console.error("Upload error:", error);
-        }
-      }
-    );
   };
 
   return (
     <main className="flex flex-col justify-center items-center md:my-29 lg:my-29 xl:my-29">
       <div className="m-2 xs:w-full xxs:w-full sm:w-full md:w-full lg:w-3/6">
-        {/* Display video only when transcription is fetched */}
         {transcriptionStarted && uploadedVideo && (
           <CldVideoPlayer
-            className=" aspect-video rounded-lg"
+            className="aspect-video rounded-lg"
             width={1920}
             height={1080}
             publicId={uploadedVideo}
@@ -113,12 +93,20 @@ const Page = () => {
           <>
             {!uploadedVideo && (
               <CldUploadWidget
-                signatureEndpoint="/api/sign-cloudinary-params"
+                cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
+                uploadPreset={process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET}
                 onSuccess={handleUploadSuccess}
+                options={{
+                  sources: ["local", "url", "camera"],
+                  clientAllowedFormats: ["mp4", "avi", "mov"],
+                  maxFileSize: 500000000,
+                  multiple: false,
+                  resourceType: "video",
+                }}
               >
                 {({ open }) => (
                   <button
-                    onClick={handleUploadWidgetOpen}
+                    onClick={() => open()}
                     className="bg-primary-600 hover:bg-primary-700 text-white font-bold py-2 px-4 rounded mr-5"
                     disabled={loadingTranscription}
                   >

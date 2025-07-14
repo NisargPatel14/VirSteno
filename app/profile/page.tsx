@@ -1,16 +1,15 @@
-import { auth, clerkClient } from "@clerk/nextjs";
+import { auth, currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { OrgDetails, SessionDetails, UserDetails } from "./details";
-import Link from "next/link";
 
 export default async function DashboardPage() {
-  const { userId } = auth();
-
+  const { userId } = await auth();
+  
   if (!userId) {
-    redirect("/");
+    redirect("/sign-in");
   }
 
-  const user = await clerkClient.users.getUser(userId);
+  const user = await currentUser();
 
   return (
     <div className="px-8 py-12 sm:py-16 md:px-20">
@@ -24,8 +23,8 @@ export default async function DashboardPage() {
             <SessionDetails />
             <OrgDetails />
           </div>
-          
-          
+          <div className="mt-8">
+          </div>
         </>
       )}
     </div>

@@ -11,6 +11,12 @@ import Link from "next/link";
 import Script from "next/script";
 import { Docs, Github, Times } from "./icons";
 import { Metadata } from "next";
+import dynamic from 'next/dynamic';
+
+const DevelopmentNotice = dynamic(
+  () => import('./components/DevelopmentNotice'),
+  { ssr: false }
+);
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -46,6 +52,7 @@ export default function RootLayout({
         }}
       >
         <body className={`${inter.className} min-h-screen flex flex-col`}>
+          <DevelopmentNotice />
           <header className="flex items-center h-20 gap-4 px-4 border-b border-solid sm:px-8 border-opacity-20 bg-white">
             <Link href="/" className="flex items-center h-20 gap-2 sm:gap-4">
               <Image
@@ -55,14 +62,6 @@ export default function RootLayout({
                 height={90}
                 priority
               />
-              {/* <Times />
-              <Image
-                src="/next.svg"
-                alt="Next.js Logo"
-                width={90}
-                height={18}
-                priority
-              /> */}
             </Link>
             <div className="grow" />
             <SignedIn>
@@ -81,7 +80,7 @@ export default function RootLayout({
                   }}
                 />
               </div>
-              <UserButton afterSignOutUrl="/" />
+              <UserButton />
             </SignedIn>
           </header>
           <main className="grow">{children}</main>
@@ -108,8 +107,6 @@ export default function RootLayout({
           </footer>
         </body>
       </ClerkProvider>
-      <Script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js" />
-      <Script src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js" />
     </html>
   );
 }
