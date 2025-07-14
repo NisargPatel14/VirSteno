@@ -19,7 +19,7 @@ export default function DevelopmentNotice() {
     <div className="fixed top-0 left-0 right-0 z-50">
       <div className="bg-yellow-400 p-2 text-center">
         <span className="text-sm">
-          API services are currently limited. Some features might not work as expected.
+          API services are currently limited. Some features might not work as expected as the project is not updated.
         </span>
         <button 
           onClick={handleDismiss}
