@@ -66,7 +66,7 @@ const Page = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "ai-api-key": "pk-hlBNZtFRlvukKZAhwJoKxhUmhWoqsvTJSlQDWiQKhhonVsDX",
+          "ai-api-key": process.env.NEXT_PUBLIC_AI_API_KEY,
         },
         body: JSON.stringify({
           messages: [
