@@ -86,11 +86,15 @@ const Home = () => {
     ]);
 
     try {
+      if (!process.env.NEXT_PUBLIC_AI_API_KEY) {
+        throw new Error("AI API key not found");
+      }
+      
       const response = await fetch("http://127.0.0.1:8787/ai", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "ai-api-key": "pk-AZJNfuIbSvrVAOEbozHEohLWoTxefipDLlEAjRTlPBzdqPyj",
+          "ai-api-key": process.env.NEXT_PUBLIC_AI_API_KEY,
         },
         body: JSON.stringify({
           messages: [

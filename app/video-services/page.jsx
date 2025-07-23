@@ -23,7 +23,7 @@ const Page = () => {
           headers: {
             "Content-Type": "application/json",
             audio_url: audioUrl,
-            "assembly-ai-api-key": "07b10cbba5684870bb4b628a97d110ea",
+            "assembly-ai-api-key":process.env.NEXT_PUBLIC_ASSEMBLY_AI_API_KEY,
           },
         }
       );

@@ -23,7 +23,7 @@ const Page = () => {
           headers: {
             "Content-Type": "application/json",
             audio_url:
-            "https://raw.githubusercontent.com/NisargPatel14/VirSteno/main/public/SpongeBob.mp4",
+            "https://raw.githubusercontent.com/ns-rg/VirSteno/main/public/SpongeBob.mp4",
             "assembly-ai-api-key": "07b10cbba5684870bb4b628a97d110ea",
             //"speakers_labels":"true",
           },
@@ -62,11 +62,11 @@ const Page = () => {
     setError(null);
 
     try {
-      const response = await fetch("https://virai.virsteno.workers.dev/ai", {
+      const response = await fetch("https://virai.virsteno.workers.dev/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "ai-api-key": "pk-rgCybLsNqeXpLFmGgPTTqFKkpAkigFWOyubETOzVkREhkREc",
+          "ai-api-key": "pk-hlBNZtFRlvukKZAhwJoKxhUmhWoqsvTJSlQDWiQKhhonVsDX",
         },
         body: JSON.stringify({
           messages: [
